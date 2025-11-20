@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Display Section</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .product-box {
+            display: inline-block;
+            width: 250px;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 15px;
+            text-align: center;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .product-box img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: green;
+            margin: 10px 0;
+        }
+
+        .buy-now {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .buy-now:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Product Information Box</h2>
+
+    <!-- Book 1 -->
+    <div class="product-box">
+        <img src="https://covers.openlibrary.org/b/id/7222246-L.jpg" alt="The Great Gatsby">
+        <div class="product-title">The Great Gatsby</div>
+        <p>Classic novel by F. Scott Fitzgerald.</p>
+        <div class="price">$15</div>
+        <a href="#" class="buy-now">Buy Now</a>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="product-box">
+        <img src="https://covers.openlibrary.org/b/id/10958361-L.jpg" alt="Atomic Habits">
+        <div class="product-title">Atomic Habits</div>
+        <p>A practical guide to building good habits.</p>
+        <div class="price">$12</div>
+        <a href="#" class="buy-now">Buy Now</a>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="product-box">
+        <img src="https://covers.openlibrary.org/b/id/7984916-L.jpg" alt="Harry Potter">
+        <div class="product-title">Harry Potter</div>
+        <p>Fantasy novel full of magic and adventure.</p>
+        <div class="price">$18</div>
+        <a href="#" class="buy-now">Buy Now</a>
+    </div>
+
+</body>
+</html>
