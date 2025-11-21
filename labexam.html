@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Global Tech Connect</title>
+
+    <style>
+      #box1 {
+        width: 500px;
+        height: auto;
+        border: 2px solid black;
+        background-color: white;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+    </style>
+
+    <script>
+      let count = 0;
+
+      function handleRegistration() {
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const company = document.getElementById("company").value.trim();
+        const attendance = document.querySelector(
+          'input[name="attendance"]:checked'
+        );
+
+        let valid = true;
+
+      
+        if (fullName.length < 6 || fullName.length > 100) {
+          document.getElementById("nameErr").innerHTML =
+            "Name must be between 6 and 100 characters.";
+          valid = false;
+        } else {
+          document.getElementById("nameErr").innerHTML = "";
+        }
+
+        
+        const emailPattern =
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!emailPattern.test(email)) {
+          document.getElementById("emailErr").innerHTML =
+            "Please enter a valid professional email address.";
+          valid = false;
+        } else {
+          document.getElementById("emailErr").innerHTML = "";
+        }
+
+        
+        if (company.length > 100) {
+          document.getElementById("companyErr").innerHTML =
+            "Company name cannot exceed 100 characters.";
+          valid = false;
+        } else {
+          document.getElementById("companyErr").innerHTML = "";
+        }
+
+       
+        if (!attendance) {
+          document.getElementById("attendErr").innerHTML =
+            "Please select your attendance type.";
+          valid = false;
+        } else {
+          document.getElementById("attendErr").innerHTML = "";
+        }
+
+        
+        if (valid) {
+          count++;
+          alert("Registration Successful!");
+        }
+      }
+
+      function toggleAnalytics() {
+        alert("Analytics feature coming soon!");
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="box1">
+      <h1>Global Tech Connect </h1>
+
+      <label>Full Name</label>
+      <input type="text" id="fullName" placeholder="Enter full name" />
+      <p id="nameErr" style="color: red"></p>
+
+      <label>Email</label>
+      <input type="text" id="email" placeholder="Enter email" />
+      <p id="emailErr" style="color: red"></p>
+
+      <label>Company / Institution (Optional)</label>
+      <input type="text" id="company" placeholder="Enter company name" />
+      <p id="companyErr" style="color: red"></p>
+
+      <label>Attendance Type</label><br />
+      <input type="radio" name="attendance" value="Virtual" /> Virtual <br />
+      <input type="radio" name="attendance" value="In-Person" /> In-Person
+      <p id="attendErr" style="color: red"></p>
+
+      <button onclick="handleRegistration()">Register</button>
+      <br /><br />
+
+      <button id="analyticsBtn" onclick="toggleAnalytics()">
+        Show Event Analytics
+      </button>
+    </div>
+  </body>
+</html>
